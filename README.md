@@ -2,6 +2,12 @@
 
 坐标转换库，支持百度/高德/腾讯坐标互转。
 
+## Install
+
+```bash
+$yarn add coordinate-transfer
+```
+
 ## Usage
 
 使用示例：
