@@ -2,8 +2,9 @@ import resolve from 'rollup-plugin-node-resolve';
 import commonjs from 'rollup-plugin-commonjs'
 import babel from 'rollup-plugin-babel';
 import filesize from 'rollup-plugin-filesize';
+import typescript from 'rollup-plugin-typescript';
 export default {
-  input: 'src/index.js',
+  input: 'src/index.ts',
   output: {
     file: 'dist/bundle.js',
     format: 'cjs',
@@ -18,6 +19,7 @@ export default {
     babel({  // 运行babel配置
       exclude: '**/node_modules/**'   // 不打包node_modules中的文件
     }),
-    filesize()   // 打包时展示文件大小
+    filesize(),   // 打包时展示文件大小
+    typescript(),  // typescript支持
   ],
 };
