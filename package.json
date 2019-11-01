@@ -1,10 +1,10 @@
 {
   "name": "coordinate-transfer",
-  "version": "1.2.2",
+  "version": "1.3.0",
   "description": "",
   "main": "dist/bundle.js",
   "module": "src/index.js",
-  "typings": "types/index.ts",
+  "typings": "types/index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "rollup -c"
