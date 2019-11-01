@@ -1,7 +1,12 @@
 {
   "name": "coordinate-transfer",
   "version": "1.3.0",
-  "description": "",
+  "description": "百度/高德/腾讯经纬度互转工具",
+  "keywords": [
+    "coordinate-transformation", 
+    "map",
+    "typescript"
+  ],
   "main": "dist/bundle.js",
   "module": "src/index.js",
   "typings": "types/index.d.ts",
