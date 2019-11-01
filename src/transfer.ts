@@ -83,7 +83,7 @@ function verifyParams(params: CoordinateParams) {
   }
 
   // 参数值合法验证
-  if (!(from === 'bmap' && ['tmap', 'gmap'].includes(to)) || !(['tmap', 'gmap'].includes(from) && to === 'bmap')) {
+  if (['tmap', 'gmap'].includes(from) && ['tmap', 'gmap'].includes(to) ) {
     throwError('传入的初始坐标目标坐标类型冲突，请检查。gmap和tmap不能相互转换，因为腾讯和高德是同一个坐标系，不需要转换')
     return false
   }
