@@ -3,30 +3,49 @@
   "version": "1.3.0",
   "description": "百度/高德/腾讯经纬度互转工具",
   "keywords": [
-    "coordinate-transformation", 
+    "coordinate-transformation",
     "map",
     "typescript"
   ],
-  "main": "dist/bundle.js",
-  "module": "src/index.js",
+  "author": {
+    "name": "lexmin0412",
+    "email": "zhangle_dev@outlook.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lexmin0412/coordinate-transfer.git"
+  },
+  "main": "./lib/index.js",
+  "module": "./es/index.js",
   "typings": "types/index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "rollup -c"
+    "build": "npm run build:commonjs && npm run build:es",
+    "build:commonjs": "rimraf lib && tsc --target es5 --outDir lib --module commonjs --declaration",
+    "build:es": "rimraf es && tsc --target es6 --outDir es --module es6",
+    "ts": "ts-node src/",
+    "prepublishOnly": "npm run build"
   },
-  "author": "",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.6.4",
     "@babel/preset-env": "^7.6.3",
+    "rimraf": "^3.0.2",
     "rollup-plugin-babel": "^4.3.3",
     "rollup-plugin-commonjs": "^10.1.0",
     "rollup-plugin-node-resolve": "^5.2.0",
     "rollup-plugin-typescript": "^1.0.1",
+    "ts-node": "^10.9.1",
     "tslib": "^1.10.0",
-    "typescript": "^3.6.4"
+    "typescript": "^3.9.10"
   },
   "dependencies": {
     "rollup-plugin-filesize": "^6.2.1"
-  }
+  },
+  "files": [
+    "es",
+    "lib"
+  ],
+  "types": "./lib/index.d.ts",
+  "jsnext:main": "./es/index.js"
 }
